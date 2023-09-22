@@ -6,6 +6,7 @@ on: # https://docs.github.com/en/actions/using-workflows/reusing-workflows
 #  TZ: Asia/Shanghai
 jobs:
   reusable-linter-default:
+    name: Reusable Workflow - Super Linter - Default
     runs-on: [ubuntu-latest]
 
     permissions:
