@@ -12,6 +12,6 @@ on:
   workflow_dispatch:
 
 jobs:
-  linter:
+  calling:
     uses: ./.github/workflows/linter-default.yml
 ...
