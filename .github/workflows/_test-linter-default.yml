@@ -16,5 +16,5 @@ on:
 
 jobs:
   linter:
-    use: ./.github/workflows/linter-default.yml
+    uses: ./.github/workflows/linter-default.yml
 ...
