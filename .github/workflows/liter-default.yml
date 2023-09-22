@@ -35,7 +35,7 @@ jobs:
 
       # https://github.com/marketplace/actions/super-linter
       - uses: super-linter/super-linter/slim@v5
-        name: 🔎🔎🔎 Run ${{ github.action }}: ${{ github.action_status }}
+        name: '🔎🔎🔎 Run ${{ github.action }}: ${{ github.action_status }}'
         env:
           SUPPRESS_POSSUM: true
           DEFAULT_BRANCH: ${{ github.event.repository.default_branch }}
