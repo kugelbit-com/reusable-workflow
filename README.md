@@ -1,10 +1,10 @@
-# Yet another repository of reusable workflows for GitHub Actions
+# Yet another repository of reusable workflows
 [![GitHub release (latest SemVer)](https://img.shields.io/github/v/release/vbem/reusable?label=Release&logo=github)](https://github.com/vbem/reusable/releases)
 [![Test linter-default](https://github.com/vbem/reusable/actions/workflows/linter-default.test.yml/badge.svg)](https://github.com/vbem/reusable/actions/workflows/linter-default.test.yml)
 
-## Super-Linter
+## Super-Linter reusable workflows
 
-### Default Pattern
+### `linter-default`
 
 Create `.github/workflows/linter.yaml` in your repository:
 ```yaml
