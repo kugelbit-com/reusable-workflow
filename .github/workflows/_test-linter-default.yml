@@ -1,0 +1,20 @@
+---
+name: Super Linter
+
+env:
+  TZ: Asia/Shanghai
+
+# https://docs.github.com/en/actions/using-workflows/workflow-syntax-for-github-actions#example-only-cancel-in-progress-jobs-or-runs-for-the-current-workflow
+concurrency:
+  group: ${{ github.workflow }}@${{ github.ref }}
+  cancel-in-progress: true
+
+on:
+  push:
+    branches: [master, main]
+  workflow_dispatch:
+
+jobs:
+  linter:
+    use: ./.github/workflows/linter-default.yml
+...
