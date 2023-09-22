@@ -1,0 +1,47 @@
+---
+name: Reusable Workflow - Super Linter - Default
+
+on: # https://docs.github.com/en/actions/using-workflows/reusing-workflows
+  workflow_call:
+    inputs:
+      timezone:
+        description: 'The timezone, defaults to `Asia/Shanghai`'
+        type: string
+        required: false
+        default: 'Asia/Shanghai'
+      runs-on:
+        description: 'The jobs.<job_id>.runs-on, defaults to `["ubuntu-latest"]`'
+        type: string
+        required: false
+        default: '["ubuntu-latest"]'
+
+env:
+  TZ: ${{ inputs.timezone }}
+
+jobs:
+  linter-default:
+    runs-on: ${{ fromJSON(inputs.runs-on) }}
+
+    permissions:
+      contents: read
+      packages: read
+      statuses: write
+
+    steps:
+      # https://github.com/marketplace/actions/checkout
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0 # Full git history is needed to get a proper list of changed files within `super-linter`
+
+      # https://github.com/marketplace/actions/super-linter
+      - uses: super-linter/super-linter/slim@v5
+        name: 🔎🔎🔎 Run ${{ github.action }}: ${{ github.action_status }}
+        env:
+          SUPPRESS_POSSUM: true
+          DEFAULT_BRANCH: ${{ github.event.repository.default_branch }}
+          GITHUB_TOKEN: ${{ github.token }}
+          GITHUB_ACTIONS_COMMAND_ARGS: '-ignore colons -ignore line-length' # https://github.com/rhysd/actionlint/blob/main/docs/usage.md#super-linter
+          HADOLINT_FAILURE_THRESHOLD: error # https://github.com/hadolint/hadolint#configure
+          SHELLCHECK_OPTS: '--severity=warning' # https://github.com/koalaman/shellcheck#pre-commit
+          VALIDATE_BASH_EXEC: false
+...
