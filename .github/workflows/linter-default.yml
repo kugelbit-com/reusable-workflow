@@ -2,10 +2,10 @@
 on: # https://docs.github.com/en/actions/using-workflows/reusing-workflows
   workflow_call:
 
-env:
-  TZ: Asia/Shanghai
+#env:
+#  TZ: Asia/Shanghai
 jobs:
-  linter-default:
+  reusable-linter-default:
     runs-on: [ubuntu-latest]
 
     permissions:
