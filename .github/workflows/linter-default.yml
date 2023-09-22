@@ -1,13 +1,25 @@
 ---
+name: Reusable Workflow - Super Linter - Default
+
 on: # https://docs.github.com/en/actions/using-workflows/reusing-workflows
   workflow_call:
+    inputs:
+      timezone:
+        description: 'The timezone, defaults to `Asia/Shanghai`'
+        type: string
+        required: false
+        default: 'Asia/Shanghai'
+      runs-on:
+        description: 'The jobs.<job_id>.runs-on, defaults to `ubuntu-latest`'
+        type: string
+        required: false
+        default: 'ubuntu-latest'
+env:
+  TZ: ${{ inputs.timezone }}
 
-#env:
-#  TZ: Asia/Shanghai
 jobs:
   reusable-linter-default:
-    name: Reusable Workflow - Super Linter - Default
-    runs-on: [ubuntu-latest]
+    runs-on: [${{ inputs.runs-on }}]
 
     permissions:
       contents: read
