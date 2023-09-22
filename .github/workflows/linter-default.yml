@@ -20,7 +20,7 @@ env:
 
 jobs:
   reusable-linter-default:
-    runs-on: [ '${{ inputs.runs-on }}' ] ${{ fromJSON(inputs.runs-on) }}
+    runs-on: ${{ fromJSON(inputs.runs-on) }}
 
     permissions:
       contents: read
