@@ -10,16 +10,17 @@ on: # https://docs.github.com/en/actions/using-workflows/reusing-workflows
         required: false
         default: 'Asia/Shanghai'
       runs-on:
-        description: 'The jobs.<job_id>.runs-on, defaults to `ubuntu-latest`'
+        description: 'The jobs.<job_id>.runs-on, defaults to `["ubuntu-latest"]`'
         type: string
         required: false
-        default: 'ubuntu-latest'
+        default: '["ubuntu-latest"]'
+
 env:
   TZ: ${{ inputs.timezone }}
 
 jobs:
   reusable-linter-default:
-    runs-on: [ '${{ inputs.runs-on }}' ]
+    runs-on: [ '${{ inputs.runs-on }}' ] ${{ fromJSON(inputs.runs-on) }}
 
     permissions:
       contents: read
