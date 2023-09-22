@@ -3,10 +3,10 @@
 [![Test linter-default](https://github.com/vbem/reusable/actions/workflows/linter-default.test.yml/badge.svg)](https://github.com/vbem/reusable/actions/workflows/linter-default.test.yml)
 
 ## Super-Linter reusable workflows
+A set of reusable workflows based on [Super-Linter](https://github.com/marketplace/actions/super-linter).
 
 ### `linter-default`
-
-Create `.github/workflows/linter.yaml` in your repository:
+[`linter-default.yml`](.github/workflows/linter-default.yml) predefines some configurations for *Super-Linter*. Create `.github/workflows/linter.yaml` in your repository:
 ```yaml
 ---
 name: Super Linter
