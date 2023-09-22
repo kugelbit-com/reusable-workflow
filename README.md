@@ -6,7 +6,7 @@
 A set of code-linter related [reusable workflows](https://docs.github.com/en/actions/using-workflows/reusing-workflows).
 
 ### `linter-default`
-[`linter-default.yml`](.github/workflows/linter-default.yml) predefines some configurations for [*Super-Linter* action](https://github.com/marketplace/actions/super-linter). Create `.github/workflows/linter.yaml` in your repository:
+[`linter-default.yml`](.github/workflows/linter-default.yml) predefines some configurations for the well-known [*Super-Linter* action](https://github.com/marketplace/actions/super-linter). Create `.github/workflows/linter.yaml` in your repository:
 ```yaml
 ---
 name: Super Linter
