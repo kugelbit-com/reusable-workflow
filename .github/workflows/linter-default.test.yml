@@ -1,5 +1,5 @@
 ---
-name: Test linter-default.yml
+name: Test linter-default
 
 concurrency:
   group: ${{ github.workflow }}@${{ github.ref }}
