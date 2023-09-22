@@ -19,7 +19,7 @@ env:
 
 jobs:
   reusable-linter-default:
-    runs-on: [${{ inputs.runs-on }}]
+    runs-on: [ ${{ inputs.runs-on }} ]
 
     permissions:
       contents: read
