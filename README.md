@@ -2,11 +2,11 @@
 [![GitHub release (latest SemVer)](https://img.shields.io/github/v/release/vbem/reusable?label=Release&logo=github)](https://github.com/vbem/reusable/releases)
 [![Test linter-default](https://github.com/vbem/reusable/actions/workflows/linter-default.test.yml/badge.svg)](https://github.com/vbem/reusable/actions/workflows/linter-default.test.yml)
 
-## Super-Linter reusable workflows
-A set of reusable workflows based on [Super-Linter](https://github.com/marketplace/actions/super-linter).
+## Linters
+A set of code-linter related [reusable workflows](https://docs.github.com/en/actions/using-workflows/reusing-workflows).
 
 ### `linter-default`
-[`linter-default.yml`](.github/workflows/linter-default.yml) predefines some configurations for *Super-Linter*. Create `.github/workflows/linter.yaml` in your repository:
+[`linter-default.yml`](.github/workflows/linter-default.yml) predefines some configurations for [*Super-Linter* action](https://github.com/marketplace/actions/super-linter). Create `.github/workflows/linter.yaml` in your repository:
 ```yaml
 ---
 name: Super Linter
