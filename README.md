@@ -1,4 +1,5 @@
 # Yet another repository of reusable workflows
+[![GitHub](https://img.shields.io/github/license/vbem/reusable)](LICENSE)
 [![GitHub release (latest SemVer)](https://img.shields.io/github/v/release/vbem/reusable?label=Release&logo=github)](https://github.com/vbem/reusable/releases)
 [![Test linter-default](https://github.com/vbem/reusable/actions/workflows/linter-default.test.yml/badge.svg)](https://github.com/vbem/reusable/actions/workflows/linter-default.test.yml)
 
