@@ -1,9 +1,20 @@
 ---
-# https://github.com/marketplace/actions/super-linter#supported-linters
+# https://github.com/marketplace/actions/super-linter#template-rules-files
+# https://github.com/super-linter/super-linter/blob/main/TEMPLATES/.markdown-lint.yml
 # https://github.com/DavidAnson/markdownlint#optionsconfig
 
-MD013: false # https://github.com/DavidAnson/markdownlint/blob/main/doc/md013.md
-MD022: false # https://github.com/DavidAnson/markdownlint/blob/main/doc/md022.md
-MD031: false # https://github.com/DavidAnson/markdownlint/blob/main/doc/md031.md
-MD047: false # https://github.com/DavidAnson/markdownlint/blob/main/doc/md047.md
+# https://github.com/DavidAnson/markdownlint#rules--aliases
+MD004: false        # Unordered list style
+MD007:
+  indent: 2         # Unordered list indentation
+MD013:              # Line length 80 is far too short
+  line_length: 65535
+MD026:              # List of not allowed
+  punctuation: ".,;:!。，；:"
+MD029: false        # Ordered list item prefix
+MD033: false        # Allow inline HTML
+MD036: false        # Emphasis used instead of a heading
+
+# https://github.com/DavidAnson/markdownlint#tags
+blank_lines: false  # Error on blank lines
 ...
