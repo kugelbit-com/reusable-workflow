@@ -1,5 +1,6 @@
 # Yet another repository of reusable workflows
-![Static Badge](https://img.shields.io/badge/GitHub%20Actions-reusable%20workflows-blue?logo=github&link=https%3A%2F%2Fdocs.github.com%2Fen%2Factions%2Fusing-workflows%2Freusing-workflows)
+[![Static Badge](https://img.shields.io/badge/GitHub%20Actions-reusable%20workflows-blue?logo=github)
+](https://docs.github.com/en/actions/using-workflows/reusing-workflows)
 [![GitHub](https://img.shields.io/github/license/vbem/reusable)](LICENSE)
 [![GitHub release (latest SemVer)](https://img.shields.io/github/v/release/vbem/reusable?label=Release&logo=github)](https://github.com/vbem/reusable/releases)
 [![Test linter-default](https://github.com/vbem/reusable/actions/workflows/linter-default.test.yml/badge.svg)](https://github.com/vbem/reusable/actions/workflows/linter-default.test.yml)
