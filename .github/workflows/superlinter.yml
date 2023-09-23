@@ -14,6 +14,11 @@ on:
         type: string
         required: false
         default: '["ubuntu-latest"]'
+      reusable-linter-rules:
+        description: 'Whether to use LINTER_RULES_PATH in reusable workflow, defaults to `true`'
+        type: boolean
+        required: false
+        default: true
 
 env:
   TZ: ${{ inputs.timezone }}
@@ -28,12 +33,40 @@ jobs:
       statuses: write
 
     steps:
-      - run: echo "${{ github.action_path }}"
-
       # https://github.com/marketplace/actions/checkout
       - uses: actions/checkout@v4
         with:
           fetch-depth: 0 # Full git history is needed to get a proper list of changed files within `super-linter`
+
+      # https://github.com/marketplace/actions/super-linter#template-rules-files
+      - if: inputs.reusable-linter-rules
+        name: Generate predefined rules files in reusable workflow
+        env:
+          STEP_LINTER_RULES_PATH: ${{ github.workspace }}/reusable-linter-rules
+          STEP_REUSABLE_MARKDOWN_CONFIG_FILE_CONTENT: |
+            ---
+            # https://github.com/super-linter/super-linter/blob/main/TEMPLATES/.markdown-lint.yml
+            # https://github.com/DavidAnson/markdownlint#optionsconfig
+            # https://github.com/DavidAnson/markdownlint#rules--aliases
+            MD004: false        # Unordered list style
+            MD007:
+              indent: 2         # Unordered list indentation
+            MD013:              # Line length 80 is far too short
+              line_length: 65535
+            MD026:              # List of not allowed
+              punctuation: ".,;:!。，；:"
+            MD029: false        # Ordered list item prefix
+            MD033: false        # Allow inline HTML
+            MD036: false        # Emphasis used instead of a heading
+            # https://github.com/DavidAnson/markdownlint#tags
+            blank_lines: false  # Error on blank lines
+            ...
+        run: |
+          mkdir -p "$STEP_LINTER_RULES_PATH"
+          echo "LINTER_RULES_PATH=$STEP_LINTER_RULES_PATH" >> "$GITHUB_ENV"
+          rulepath="$STEP_LINTER_RULES_PATH/.markdown-lint.yml"
+          echo "Generated $rulepath:"
+          echo -n "$STEP_REUSABLE_MARKDOWN_CONFIG_FILE_CONTENT" | tee "$rulepath"
 
       # https://github.com/marketplace/actions/super-linter
       - uses: super-linter/super-linter/slim@v5
