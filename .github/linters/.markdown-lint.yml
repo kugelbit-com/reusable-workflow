@@ -3,6 +3,7 @@
 # https://github.com/DavidAnson/markdownlint#optionsconfig
 
 MD013: false # https://github.com/DavidAnson/markdownlint/blob/main/doc/md013.md
+MD022: false # https://github.com/DavidAnson/markdownlint/blob/main/doc/md022.md
 MD031: false # https://github.com/DavidAnson/markdownlint/blob/main/doc/md031.md
 MD047: false # https://github.com/DavidAnson/markdownlint/blob/main/doc/md047.md
 ...
