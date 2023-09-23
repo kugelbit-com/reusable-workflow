@@ -28,9 +28,7 @@ jobs:
       statuses: write
 
     steps:
-      # https://github.com/marketplace/actions/flatten-contexts
-      - uses: vbem/flatten-contexts@v1
-        continue-on-error: true
+      - run: echo "${{ github.action_path }}"
 
       # https://github.com/marketplace/actions/checkout
       - uses: actions/checkout@v4
