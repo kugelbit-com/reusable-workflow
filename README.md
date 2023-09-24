@@ -3,6 +3,7 @@
 [![GitHub](https://img.shields.io/github/license/vbem/reusable?color=blue)](LICENSE)
 [![GitHub release (latest SemVer)](https://img.shields.io/github/v/release/vbem/reusable?label=Release&logo=github)](https://github.com/vbem/reusable/releases)
 [![superlinter.test](https://github.com/vbem/reusable/actions/workflows/superlinter.test.yml/badge.svg)](https://github.com/vbem/reusable/actions/workflows/superlinter.test.yml)
+[![keepalive.test](https://github.com/vbem/reusable/actions/workflows/keepalive.test.yml/badge.svg)](https://github.com/vbem/reusable/actions/workflows/keepalive.test.yml)
 
 ## `superlinter`
 [`superlinter.yml`](.github/workflows/superlinter.yml) predefines generic configurations for the well-known [*Super-Linter* action](https://github.com/marketplace/actions/super-linter). Create `.github/workflows/linter.yaml` in your repository:
