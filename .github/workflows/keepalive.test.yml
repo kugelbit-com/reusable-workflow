@@ -2,7 +2,8 @@
 name: keepalive.test
 
 on:
-  schedule: [ cron: '0 0 * * 5' ] # in UTC-0 timezone
+  push:
+    branches: [master, main]
   workflow_dispatch:
 
 jobs:
