@@ -1,0 +1,46 @@
+---
+name: Reusable Workflow - keepalive
+
+on:
+  workflow_call: # https://docs.github.com/en/actions/using-workflows/reusing-workflows
+    inputs:
+      timezone:
+        description: 'The timezone, defaults to `Asia/Shanghai`'
+        type: string
+        required: false
+        default: 'Asia/Shanghai'
+      runs-on:
+        description: 'The jobs.<job_id>.runs-on, defaults to `["ubuntu-latest"]`'
+        type: string
+        required: false
+        default: '["ubuntu-latest"]'
+      commit-message:
+        description: 'Commit message used while committing to the repo, defaults to `[skip actions] ${github.workflow}`'
+        type: string
+        required: false
+        default: '[skip actions] ${{ github.workflow }}'
+
+env:
+  TZ: ${{ inputs.timezone }}
+
+jobs:
+  keepalive:
+    runs-on: ${{ fromJSON(inputs.runs-on) }}
+
+    permissions: # https://github.com/marketplace/actions/keepalive-workflow#faqs-and-common-issues
+      contents: write
+
+    steps:
+      # https://github.com/marketplace/actions/checkout
+      - uses: actions/checkout@v4
+
+      # https://github.com/marketplace/actions/keepalive-workflow
+      # https://docs.github.com/en/actions/learn-github-actions/usage-limits-billing-and-administration#disabling-and-enabling-workflows
+      # https://docs.github.com/en/actions/managing-workflow-runs/disabling-and-enabling-a-workflow
+      # https://docs.github.com/en/actions/security-guides/security-hardening-for-github-actions#using-third-party-actions
+      # https://github.com/gautamkrishnar/keepalive-workflow/tree/1.1.0
+      - uses: gautamkrishnar/keepalive-workflow@790c7f09285a59b09bb578c85e271c6ff2af97c4
+        with:
+          # https://docs.github.com/en/actions/managing-workflow-runs/skipping-workflow-runs
+          commit_message: ${{ inputs.commit-message }}
+...
