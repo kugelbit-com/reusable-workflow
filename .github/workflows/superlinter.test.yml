@@ -8,6 +8,7 @@ concurrency:
 on:
   push:
     branches: [master, main]
+    paths: ['.github/workflows/superlinter.*']
   workflow_dispatch:
 
 jobs:

@@ -4,6 +4,7 @@ name: keepalive.test
 on:
   push:
     branches: [master, main]
+    paths: ['.github/workflows/keepalive.*']
   workflow_dispatch:
 
 jobs:
