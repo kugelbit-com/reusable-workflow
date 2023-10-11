@@ -13,5 +13,10 @@ on:
 
 jobs:
   calling:
+    permissions:
+      contents: read
+      packages: read
+      statuses: write
+
     uses: ./.github/workflows/superlinter.yml
 ...

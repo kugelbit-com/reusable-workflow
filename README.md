@@ -38,6 +38,11 @@ on:
 
 jobs:
   calling:
+    permissions:
+      contents: read
+      packages: read
+      statuses: write
+
     uses: vbem/reusable/.github/workflows/keepalive.yml@v1
 ...
 ```
