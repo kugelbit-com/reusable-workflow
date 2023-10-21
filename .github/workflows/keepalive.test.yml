@@ -9,5 +9,7 @@ on:
 
 jobs:
   calling:
+    permissions:
+      contents: write
     uses: ./.github/workflows/keepalive.yml
 ...

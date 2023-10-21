@@ -22,6 +22,10 @@ on:
 
 jobs:
   calling:
+    permissions:
+      contents: read
+      packages: read
+      statuses: write
     uses: vbem/reusable/.github/workflows/superlinter.yml@v1
 ...
 ```
@@ -39,10 +43,7 @@ on:
 jobs:
   calling:
     permissions:
-      contents: read
-      packages: read
-      statuses: write
-
+      contents: write
     uses: vbem/reusable/.github/workflows/keepalive.yml@v1
 ...
 ```

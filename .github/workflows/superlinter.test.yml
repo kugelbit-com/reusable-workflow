@@ -17,6 +17,5 @@ jobs:
       contents: read
       packages: read
       statuses: write
-
     uses: ./.github/workflows/superlinter.yml
 ...
