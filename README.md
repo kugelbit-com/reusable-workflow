@@ -1,4 +1,5 @@
 # Yet another repository of reusable workflows
+
 [![Static Badge](https://img.shields.io/badge/GitHub%20Actions-reusable%20workflows-blue?logo=github)](https://docs.github.com/en/actions/using-workflows/reusing-workflows)
 [![GitHub](https://img.shields.io/github/license/vbem/reusable?color=blue)](LICENSE)
 [![GitHub release (latest SemVer)](https://img.shields.io/github/v/release/vbem/reusable?label=Release&logo=github)](https://github.com/vbem/reusable/releases)
@@ -6,7 +7,9 @@
 [![keepalive.test](https://github.com/vbem/reusable/actions/workflows/keepalive.test.yml/badge.svg)](https://github.com/vbem/reusable/actions/workflows/keepalive.test.yml)
 
 ## `superlinter`
+
 [`superlinter.yml`](.github/workflows/superlinter.yml) predefined generic configurations for the well-known [*Super-Linter* action](https://github.com/marketplace/actions/super-linter). Create `.github/workflows/linter.yaml` in your repository:
+
 ```yaml
 ---
 name: Linter
@@ -31,7 +34,9 @@ jobs:
 ```
 
 ## `keepalive`
+
 [`keepalive.yml`](.github/workflows/keepalive.yml) is a wrapper the well-known [*Keepalive Workflow* action](https://github.com/marketplace/actions/keepalive-workflow). Create `.github/workflows/alive.yaml` in your repository:
+
 ```yaml
 ---
 name: Alive

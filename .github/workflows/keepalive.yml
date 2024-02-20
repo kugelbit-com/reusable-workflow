@@ -5,20 +5,20 @@ on:
   workflow_call: # https://docs.github.com/en/actions/using-workflows/reusing-workflows
     inputs:
       timezone:
-        description: 'The timezone, defaults to `Asia/Shanghai`'
+        description: "The timezone, defaults to `Asia/Shanghai`"
         type: string
         required: false
-        default: 'Asia/Shanghai'
+        default: "Asia/Shanghai"
       runs-on:
         description: 'The jobs.<job_id>.runs-on, defaults to `["ubuntu-latest"]`'
         type: string
         required: false
         default: '["ubuntu-latest"]'
       commit-message:
-        description: 'Commit message used while committing to the repo, defaults to `[skip actions] ${github.workflow}`'
+        description: "Commit message used while committing to the repo, defaults to `[skip actions] ${github.workflow}`"
         type: string
         required: false
-        default: '[skip actions] ${{ github.workflow }}'
+        default: "[skip actions] ${{ github.workflow }}"
 
 env:
   TZ: ${{ inputs.timezone }}
@@ -43,4 +43,3 @@ jobs:
         with:
           # https://docs.github.com/en/actions/managing-workflow-runs/skipping-workflow-runs
           commit_message: ${{ inputs.commit-message }}
-...

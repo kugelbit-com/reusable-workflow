@@ -5,17 +5,17 @@ on:
   workflow_call: # https://docs.github.com/en/actions/using-workflows/reusing-workflows
     inputs:
       timezone:
-        description: 'The timezone, defaults to `Asia/Shanghai`'
+        description: "The timezone, defaults to `Asia/Shanghai`"
         type: string
         required: false
-        default: 'Asia/Shanghai'
+        default: "Asia/Shanghai"
       runs-on:
         description: 'The jobs.<job_id>.runs-on, defaults to `["ubuntu-latest"]`'
         type: string
         required: false
         default: '["ubuntu-latest"]'
       inject-rules-from-reusable:
-        description: 'Whether inject predefined rules from reusable workflow, defaults to `true`'
+        description: "Whether inject predefined rules from reusable workflow, defaults to `true`"
         type: boolean
         required: false
         default: true
@@ -71,8 +71,7 @@ jobs:
           SUPPRESS_POSSUM: true
           DEFAULT_BRANCH: ${{ github.event.repository.default_branch }}
           GITHUB_TOKEN: ${{ github.token }}
-          GITHUB_ACTIONS_COMMAND_ARGS: '-ignore label.+unknown' # https://github.com/rhysd/actionlint/blob/main/docs/usage.md#super-linter
+          GITHUB_ACTIONS_COMMAND_ARGS: "-ignore label.+unknown" # https://github.com/rhysd/actionlint/blob/main/docs/usage.md#super-linter
           HADOLINT_FAILURE_THRESHOLD: error # https://github.com/hadolint/hadolint#configure
-          SHELLCHECK_OPTS: '--severity=warning' # https://github.com/koalaman/shellcheck#pre-commit
+          SHELLCHECK_OPTS: "--severity=warning" # https://github.com/koalaman/shellcheck#pre-commit
           VALIDATE_BASH_EXEC: false
-...
