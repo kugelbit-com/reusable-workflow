@@ -19,6 +19,11 @@ on:
         type: boolean
         required: false
         default: true
+      filter-regex-exclude:
+        description: 'FILTER_REGEX_EXCLUDE for `super-linter`, defaults to `(\.vscode/)`'
+        type: string
+        required: false
+        default: '(\.vscode/)'
 
 env:
   TZ: ${{ inputs.timezone }}
@@ -75,3 +80,4 @@ jobs:
           HADOLINT_FAILURE_THRESHOLD: error # https://github.com/hadolint/hadolint#configure
           SHELLCHECK_OPTS: "--severity=warning" # https://github.com/koalaman/shellcheck#pre-commit
           VALIDATE_BASH_EXEC: false
+          FILTER_REGEX_EXCLUDE: ${{ inputs.filter-regex-exclude }}
